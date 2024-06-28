@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   postgres-db:
-    image: alpine3.20
+    image: postgres:latest
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_DB: my-db
-      POSTGRES_PASSWORD:  123456
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./postgres:/var/lib/postgresql/data
     ports:
